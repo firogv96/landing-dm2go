@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DM2GO - Dispatch with control, Work with calm</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aldrich&family=Inter:wght@300;400;600&family=Sora:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Preload background images -->
+    <link rel="preload" as="image" href="images/a-02.webp" type="image/webp" />
+    <link rel="preload" as="image" href="images/z-01.webp" type="image/webp" />
+    <link rel="preload" as="image" href="images/z-02.webp" type="image/webp" />
+    <link rel="preload" as="image" href="images/z-04.webp" type="image/webp" />
+    <link rel="preload" as="image" href="images/b-101.webp" type="image/webp" />
+
+    <!-- Styles -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Main -->
+    <main>
+      <!-- Hero Section -->
+      <section id="sec-hero" class="hero">
+        <!-- Header -->
+        <header>
+          <a href="#" class="logo">DM2GO</a>
+          <nav class="auth-links">
+            <a href="#">Sign In</a>
+            <span class="divider">|</span>
+            <a href="#">Log In</a>
+          </nav>
+        </header>
+        <div class="container hero-content">
+          <h1>
+            <span class="hero-h1-primero">Dispatch with control</span><br />
+            <span class="hero-h1-primero">Work with calm</span><br />
+            <span class="hero-h1-segundo">-the pro dispatch app</span>
+          </h1>
+          <p class="hero-parrafo">
+            Run your dispatch operation in one clean workspace.<br />Loads,
+            documents, and daily tasks organized in seconds.
+          </p>
+          <div class="hero-cta">
+            <a href="#" class="btn btn-orange" id="hero-free-trial"
+              >Start My Free Trial</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Intro Section -->
+      <section id="sec-intro" class="section">
+        <div class="container text-center">
+          <h2 class="section-title">Dispatch shouldn’t feel chaotic</h2>
+          <div class="section-subtitle">
+            <div class="tabs-marquee-container">
+              <div class="tabs-marquee">
+                <div class="tab-item">
+                  <span class="tab-icon"
+                    ><i class="bx bxs-phone" style="color: #0ea5e9"></i></span
+                  ><span class="tab-text">Calls</span>
+                </div>
+                <div class="tab-item">
+                  <span class="tab-icon"
+                    ><i class="bx bxs-timer" style="color: #ef4444"></i></span
+                  ><span class="tab-text">Time</span>
+                </div>
+                <div class="tab-item">
+                  <span class="tab-icon"
+                    ><i class="bx bxs-package" style="color: #eab308"></i></span
+                  ><span class="tab-text">Loads</span>
+                </div>
+                <div class="tab-item">
+                  <span class="tab-icon"
+                    ><i class="bx bxs-truck" style="color: #22c55e"></i></span
+                  ><span class="tab-text">Drivers</span>
+                </div>
+                <div class="tab-item">
+                  <span class="tab-icon"
+                    ><i class="bx bx-transfer" style="color: #8b5cf6"></i></span
+                  ><span class="tab-text">Brokers</span>
+                </div>
+                <div class="tab-item">
+                  <span class="tab-icon"
+                    ><i class="bx bxs-cube" style="color: #f97316"></i></span
+                  ><span class="tab-text">Commodities</span>
+                </div>
+                <div class="tab-item">
+                  <span class="tab-icon"
+                    ><i
+                      class="bx bxs-file-blank"
+                      style="color: #64748b"
+                    ></i></span
+                  ><span class="tab-text">Documents</span>
+                </div>
+                <div class="tab-item">
+                  <span class="tab-icon"
+                    ><i
+                      class="bx bxs-credit-card"
+                      style="color: #14b8a6"
+                    ></i></span
+                  ><span class="tab-text">Payments</span>
+                </div>
+                <!-- Duplicate for seamless looping -->
+                <div class="tab-item" aria-hidden="true">
+                  <span class="tab-icon"
+                    ><i class="bx bxs-phone" style="color: #0ea5e9"></i></span
+                  ><span class="tab-text">Calls</span>
+                </div>
+                <div class="tab-item" aria-hidden="true">
+                  <span class="tab-icon"
+                    ><i class="bx bxs-timer" style="color: #ef4444"></i></span
+                  ><span class="tab-text">Time</span>
+                </div>
+                <div class="tab-item" aria-hidden="true">
+                  <span class="tab-icon"
+                    ><i class="bx bxs-package" style="color: #eab308"></i></span
+                  ><span class="tab-text">Loads</span>
+                </div>
+                <div class="tab-item" aria-hidden="true">
+                  <span class="tab-icon"
+                    ><i class="bx bxs-truck" style="color: #22c55e"></i></span
+                  ><span class="tab-text">Drivers</span>
+                </div>
+                <div class="tab-item" aria-hidden="true">
+                  <span class="tab-icon"
+                    ><i class="bx bx-transfer" style="color: #8b5cf6"></i></span
+                  ><span class="tab-text">Brokers</span>
+                </div>
+                <div class="tab-item" aria-hidden="true">
+                  <span class="tab-icon"
+                    ><i class="bx bxs-cube" style="color: #f97316"></i></span
+                  ><span class="tab-text">Commodities</span>
+                </div>
+                <div class="tab-item" aria-hidden="true">
+                  <span class="tab-icon"
+                    ><i
+                      class="bx bxs-file-blank"
+                      style="color: #64748b"
+                    ></i></span
+                  ><span class="tab-text">Documents</span>
+                </div>
+                <div class="tab-item" aria-hidden="true">
+                  <span class="tab-icon"
+                    ><i
+                      class="bx bxs-credit-card"
+                      style="color: #14b8a6"
+                    ></i></span
+                  ><span class="tab-text">Payments</span>
+                </div>
+              </div>
+            </div>
+            <div class="problem-container">
+              <div class="problem-grid">
+                <div class="problem-card">
+                  <i class="bx bx-error-circle"></i>
+                  <p>
+                    <strong>Too many tabs.</strong><br />Too much memory.<br />Too
+                    many small mistakes.
+                  </p>
+                </div>
+                <div class="problem-card">
+                  <i class="bx bx-shuffle"></i>
+                  <p>
+                    You <strong>jump between</strong> Excel, WhatsApp, emails,
+                    PDFs, screenshots, and paper notes.
+                  </p>
+                </div>
+                <div class="problem-card">
+                  <i class="bx bx-brain"></i>
+                  <p>
+                    You donʼt run a system, you
+                    <strong>juggle information</strong>. Thatʼs where stress
+                    begins.
+                  </p>
+                </div>
+              </div>
+              <div class="problem-conclusion">
+                Dispatch isnʼt the problem.
+                <span class="highlight">Working without a system is.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- One App One Workflow Section -->
+      <section id="sec-app-workflow" class="section">
+        <div class="feature-section laptop">
+          <div class="container">
+            <div class="feature-content right">
+              <h3>One App<br />One Workflow</h3>
+              <p>
+                Every load follows the same path:<br /><br />
+                <strong>Created</strong> &rarr;
+                <strong>Assigned</strong> &rarr;<br />
+                <strong>Documented</strong> &rarr;
+                <strong>Invoiced</strong> &rarr; <strong>Paid</strong
+                ><br /><br />
+                You always know whatʼs next
+              </p>
+              <div class="feature-cta">
+                <a href="#" class="btn btn-orange">Start My Free Trial</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Searchable Database Section -->
+      <section id="sec-database" class="section">
+        <div class="sec-database-bg"></div>
+        <div class="container text-center sec-database-top">
+          <h2 class="section-title text-primary">
+            Searchable Dispatch Database<br />
+            Designed To Save Time — And Reduce Stress
+          </h2>
+          <p id="sec-database-subtitle">
+            Your business moves with you. Your entire operation in one place.
+            Your work feels lighter.<br />
+            Your business feels professional. Find information in seconds.
+          </p>
+        </div>
+
+        <div class="floating-spheres">
+          <div class="sphere sphere-1">
+            <i class="bx bxs-cloud"></i>
+            <span class="floating-element-text">Cloud-based</span>
+          </div>
+          <div class="sphere sphere-2">
+            <i class="bx bx-desktop"></i>
+            <span>Any computer</span>
+          </div>
+          <div class="sphere sphere-3">
+            <i class="bx bxs-home"></i>
+            <span>At home</span>
+          </div>
+          <div class="sphere sphere-4">
+            <i class="bx bxs-car"></i>
+            <span>On the road</span>
+          </div>
+          <div class="sphere sphere-5">
+            <i class="bx bxs-sun"></i>
+            <span>On vacation</span>
+          </div>
+        </div>
+
+        <div class="container text-center sec-database-bottom">
+          <div class="mockup-callout">
+            <i class="bx bxs-check-circle callout-icon"></i>
+            <p class="italic mockup-caption">
+              If dispatch is your business, your tools should reflect that
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Professional Readiness Section -->
+      <section id="sec-pro" class="section">
+        <div class="pro-traffic-bg">
+          <svg
+            class="traffic-map-svg"
+            viewBox="0 0 1200 800"
+            preserveAspectRatio="xMidYMid slice"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="road-base"
+              id="road1"
+              d="M-100,200 C300,100 400,400 700,300 C1000,200 1100,500 1300,400"
+            />
+            <path
+              class="road-base"
+              id="road2"
+              d="M200,-100 C300,250 150,400 450,550 C750,700 700,900 650,1000"
+            />
+            <path
+              class="road-base"
+              id="road3"
+              d="M-100,650 C250,750 450,450 750,600 C1050,750 1150,450 1300,550"
+            />
+            <path
+              class="road-base"
+              id="road4"
+              d="M900,-100 C800,250 1000,450 750,650 C500,850 400,1000 450,1100"
+            />
+            <path
+              class="road-base"
+              id="road5"
+              d="M300,900 C400,600 200,400 500,150 C800,-100 700,-200 700,-200"
+            />
+
+            <path
+              class="road-trail t1"
+              d="M-100,200 C300,100 400,400 700,300 C1000,200 1100,500 1300,400"
+            />
+            <path
+              class="road-trail t2"
+              d="M200,-100 C300,250 150,400 450,550 C750,700 700,900 650,1000"
+            />
+            <path
+              class="road-trail t3"
+              d="M-100,650 C250,750 450,450 750,600 C1050,750 1150,450 1300,550"
+            />
+            <path
+              class="road-trail t4"
+              d="M900,-100 C800,250 1000,450 750,650 C500,850 400,1000 450,1100"
+            />
+            <path
+              class="road-trail t5"
+              d="M300,900 C400,600 200,400 500,150 C800,-100 700,-200 700,-200"
+            />
+          </svg>
+          <div class="traffic-overlay"></div>
+        </div>
+        <div
+          class="container text-center"
+          style="position: relative; z-index: 1"
+        >
+          <h2 class="section-title">Ready To Dispatch Like a Professional?</h2>
+          <div class="pro-facts">
+            <div class="fact-item">
+              <i class="bx bx-check"></i>
+              <span>Stop improvising. <strong>Start operating.</strong></span>
+            </div>
+            <div class="fact-item">
+              <i class="bx bx-check"></i>
+              <span
+                >Same system. Same clarity. <strong>Same calm.</strong></span
+              >
+            </div>
+          </div>
+          <p class="section-subtitle pro-subtitle">
+            Once you work this way, you donʼt go back.
+          </p>
+          <a href="#" class="btn btn-orange">Get Operational Now</a>
+        </div>
+      </section>
+
+      <!-- Payment Control Section -->
+      <section id="sec-payment" class="section feature-section tablet">
+        <div class="container">
+          <div class="feature-content left">
+            <h3>Payment Control</h3>
+            <p>
+              Track invoices<br />
+              <strong>Store documents</strong><br /><br />
+              Know whatʼs paid<br />
+              <strong>Know whatʼs pending</strong><br /><br />
+              No surprises
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing Section -->
+      <section id="sec-pricing" class="section">
+        <div class="container text-center">
+          <h2 class="section-title">Simple pricing. Clear rules</h2>
+          <p class="section-subtitle">
+            Everything included. Start your 7-day trial — card required.
+          </p>
+
+          <div class="pricing-grid">
+            <div class="pricing-card">
+              <p class="pricing-plan-name">Basic Plan</p>
+              <div class="pricing-cta" style="margin-top: 30px">
+                <a href="#" class="btn btn-orange">Select Basic</a>
+              </div>
+            </div>
+            <div class="pricing-card">
+              <p class="pricing-plan-name">Pro Plan</p>
+              <div class="pricing-cta" style="margin-top: 30px">
+                <a href="#" class="btn btn-orange">Select Pro</a>
+              </div>
+            </div>
+          </div>
+          <p
+            class="italic"
+            style="color: var(--text-secondary); margin-top: 20px"
+          >
+            No contracts. Cancel anytime
+          </p>
+        </div>
+      </section>
+
+      <!-- Referral and Youtube Sections -->
+      <section id="sec-ref-yt" class="section">
+        <!-- Referral Sub Section -->
+        <section class="section gray-bg">
+          <div class="container text-center">
+            <h2 class="section-title">Refer a dispatcher</h2>
+            <p class="section-subtitle">
+              They
+              <strong
+                style="
+                  color: var(--accent-color);
+                  font-weight: 600;
+                  font-size: 1.1em;
+                "
+                >get $25 off</strong
+              >
+              their first month. You
+              <strong
+                style="
+                  color: var(--accent-color);
+                  font-weight: 600;
+                  font-size: 1.1em;
+                "
+                >earn $20</strong
+              >
+              every month<br />while they stay subscribed.
+            </p>
+          </div>
+        </section>
+
+        <!-- YouTube Sub Section -->
+        <section class="section">
+          <div class="container text-center">
+            <h2 class="section-title">
+              Learn the full workflow on
+              <span style="color: var(--secondary-accent)">YouTube</span>
+            </h2>
+            <p class="section-subtitle">
+              A complete, structured walkthrough of the entire platform.<br />
+              Every core feature explained step by step through real dispatch<br />
+              workflows — so you know exactly how DM2GO works from day one.
+            </p>
+            <div style="margin-top: 40px">
+              <a href="#" class="btn btn-red">Watch Here</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Info Bar -->
+        <div class="info-bar">
+          Built to Organize: Loads • Brokers • Carriers • Drivers • Documents •
+          Payments
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+        <div class="container">
+          <span class="footer-logo">DM2GO</span>
+          <p>
+            Provides software tools for managing dispatch workflows.<br />
+            We do not act as brokers, dispatchers, or carriers. You retain full
+            ownership of your data.
+          </p>
+          <p style="margin-top: 20px">
+            Designed for professional dispatch operations seeking structure,
+            visibility, and operational calm.
+          </p>
+
+          <nav class="footer-links">
+            <a href="#">Product</a>
+            <a href="#">Pricing</a>
+            <a href="#">Free Trial</a>
+            <a href="#">YouTube</a>
+            <a href="#">Support</a>
+            <a href="#">Referrals</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Contact</a>
+          </nav>
+
+          <p style="margin-top: 60px; font-size: 0.9rem">
+            &copy; 2026 DM2GO. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </main>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1116,7 +1116,8 @@ footer p {
   font-weight: 300;
   max-width: 600px;
   margin: 0 auto;
-  line-height: 1.8;
+  line-height: 1.4;
+  font-size: 1rem !important;
 }
 
 .footer-logo {
@@ -1161,12 +1162,19 @@ footer p {
     overflow: visible;
   }
 
+  html,
+  body,
+  main {
+    overflow-x: hidden;
+  }
+
   #sec-ref-yt {
     padding: 0 !important;
   }
 
   #sec-ref-yt p {
     font-size: 1.25rem;
+    line-height: 1.4;
   }
 
   #sec-pricing {
@@ -1280,7 +1288,7 @@ footer p {
 
   /* Intro Section — Tablet adjustments */
   #sec-intro .container {
-    padding: 0 48px; /* More breathing room from screen edges */
+    padding: 0; /* More breathing room from screen edges */
   }
 
   .problem-grid {
@@ -1297,6 +1305,7 @@ footer p {
 
   .problem-card {
     padding: 30px 20px;
+    min-width: 0;
   }
 
   /* Tighter vertical distribution inside intro */
@@ -1318,15 +1327,18 @@ footer p {
   .feature-section.tablet {
     flex-direction: column;
     justify-content: flex-start;
+    overflow-x: clip;
   }
 
   #sec-app-workflow {
     background-color: #f7f7f7;
     margin-top: 40px;
+    overflow: hidden; /* Prevent translateX(200px) on laptop ::before from causing horizontal scroll */
   }
 
   #sec-app-workflow p {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
+    line-height: 1.4;
   }
 
   #sec-app-workflow h3 {
@@ -1337,21 +1349,22 @@ footer p {
   .feature-section.laptop::before {
     position: relative; /* Take it out of absolute so it physically occupies space at the top */
     opacity: 0;
-    transform: translateX(-100px) !important;
-    width: 300%;
+    transform: translateX(-20px) !important;
+    width: 100%;
     min-height: 500px;
-    background-position: center;
+    background-position: center !important; /* Reset desktop -35vw offset */
+    background-position-x: center !important;
     background-size: contain;
     background-repeat: no-repeat;
     transition: opacity 1s ease-out;
     order: -1; /* Place image cleanly above the text */
     margin-bottom: 20px;
-    scale: 1;
+    scale: 2.1;
   }
 
   .feature-section.laptop.in-view::before {
     opacity: 1; /* Image clearly visible */
-    transform: translate(400px) !important;
+    transform: translateX(200px) !important;
   }
 
   .feature-section.tablet::before {
@@ -1457,6 +1470,7 @@ footer p {
   #sec-pro .pro-subtitle {
     font-size: 1.25rem;
     margin-bottom: 4rem !important;
+    line-height: 1.4;
   }
 
   /* Pricing Section */
@@ -1470,10 +1484,21 @@ footer p {
 
 /* Mobile Devices (max-width: 768px) */
 @media (max-width: 768px) {
+  html,
+  body,
+  main {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
   /* Global Adjustments */
   .section-title {
     font-size: 1.8rem;
-    padding: 0 15px;
+    padding: 0;
+  }
+
+  p {
+    font-size: 1.25rem;
+    line-height: 1.4;
   }
 
   #sub-referral {
@@ -1482,6 +1507,10 @@ footer p {
 
   #sub-youtube {
     padding-top: 0 !important;
+  }
+
+  #yt-watch-btn {
+    margin-bottom: 4rem;
   }
 
   #sec-ref-yt {
@@ -1497,6 +1526,20 @@ footer p {
     padding-bottom: 0;
   }
 
+  #sec-payment p {
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  #sec-pricing p {
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  #sec-pricing {
+    padding-bottom: 4rem;
+  }
+
   #sec-pro {
     padding-top: 0;
   }
@@ -1510,7 +1553,8 @@ footer p {
   }
 
   .section-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
+    line-height: 1.4 !important;
     padding: 0 15px;
   }
 
@@ -1567,6 +1611,12 @@ footer p {
     padding: 20px 15px;
   }
 
+  /* Reset tablet centering of 3rd card — single column on mobile, all cards full width */
+  .problem-card:nth-child(3) {
+    grid-column: auto;
+    max-width: 100%;
+  }
+
   /* Feature Sections */
   .feature-content h3 {
     font-size: 2.2rem;
@@ -1589,17 +1639,25 @@ footer p {
   }
 
   .feature-section.laptop::before {
-    position: relative; /* Take it out of absolute so it physically occupies space at the top */
+    position: relative;
     opacity: 0;
-    transform: translateX(-100px) !important;
-    width: 150%;
-    min-height: 300px;
-    background-position: left;
+    transform: translateX(-20px) !important;
+    width: 130%; /* Wider than container — parent has overflow:hidden so no horizontal scroll */
+    margin-left: -5%; /* Center the wider image */
+    min-height: 250px;
+    background-position: left !important;
+    background-position-x: left !important;
     background-size: cover;
+    background-repeat: no-repeat;
     transition: opacity 1s ease-out;
-    order: -1; /* Place image cleanly above the text */
-    margin-bottom: 20px;
-    scale: 0.9;
+    order: -1;
+    margin-bottom: 0;
+    scale: 1;
+  }
+
+  .feature-section.laptop.in-view::before {
+    opacity: 1; /* Image clearly visible */
+    transform: translateX(0) !important;
   }
 
   .feature-section.tablet::before {
@@ -1612,11 +1670,6 @@ footer p {
     background-size: cover;
     transition: opacity 1s ease-out;
     order: -1; /* Place image cleanly above the text */
-  }
-
-  .feature-section.laptop.in-view::before {
-    opacity: 1; /* Image clearly visible */
-    transform: translate(-10px) !important;
   }
 
   .feature-section.tablet.in-view::before {
@@ -1704,7 +1757,10 @@ footer p {
 
   #sec-database .sec-database-bottom {
     order: 4; /* 5th: badge */
-    padding-top: 80px;
+    padding-top: 2rem;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
   }
 
   .mockup-callout {

@@ -64,6 +64,17 @@ section[id^="sec-"] {
   overflow: hidden;
 }
 
+#sub-youtube {
+  padding: 0 !important;
+  height: 80% !important;
+  align-items: center;
+}
+
+#sub-referral {
+  padding: 0 !important;
+  height: 20% !important;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -960,13 +971,6 @@ header {
   transition-delay: 0.3s, 0.3s, 0s, 0s;
 }
 
-.problem-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08);
-  border-color: var(--accent-color);
-  transition-delay: 0s, 0s, 0s, 0s; /* Override entrance delay */
-}
-
 .problem-card i {
   font-size: 3rem;
   color: var(--secondary-accent);
@@ -1144,33 +1148,623 @@ footer p {
   opacity: 1;
 }
 
-/* Mobile Responsive */
-@media (max-width: 992px) {
-  .hero-content h1 {
-    font-size: 2.5rem;
+/* Mobile & Tablet Responsive */
+
+/* Tablet and below (max-width: 1024px) */
+@media (max-width: 1024px) {
+  /* Layout resilience */
+  section[id^="sec-"] {
+    height: auto !important;
+    min-height: 100vh;
+    padding: 80px 0 40px;
+    justify-content: flex-start; /* Fixes "La sección Intro se come contenido en la parte superior" */
+    overflow: visible;
   }
+
+  #sec-ref-yt {
+    padding: 0 !important;
+  }
+
+  #sec-ref-yt p {
+    font-size: 1.25rem;
+  }
+
+  #sec-pricing {
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  #sec-pricing p {
+    font-size: 1.25rem;
+  }
+
+  #sec-pricing .pricing-card {
+    align-content: center;
+    justify-content: center;
+    height: 30vh;
+  }
+
+  #sec-pricing .section-title {
+    margin-bottom: 4rem;
+  }
+
+  #sec-pricing .section-subtitle {
+    margin-bottom: 4rem;
+  }
+
+  .floating-spheres {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+    overflow: hidden;
+  }
+
+  .sphere-1 {
+    top: 35%;
+    left: 14%;
+  }
+
+  .sphere-2 {
+    top: auto !important;
+    bottom: 34%;
+    right: 40%;
+  }
+
+  .sphere-3 {
+    top: auto !important;
+    bottom: 20%;
+    left: 20%;
+  }
+
+  .sphere-4 {
+    bottom: 20%;
+    right: 14%;
+  }
+
+  .sphere-5 {
+    top: 32%;
+    right: 15%;
+  }
+
+  #sec-intro {
+    align-items: center;
+    justify-content: center;
+  }
+
+  #sec-intro p {
+    font-size: 1.25rem;
+  }
+
+  main.snap-enabled {
+    scroll-snap-type: none; /* Ensure normal scrolling on touch devices */
+  }
+
+  /* Header */
+  header {
+    padding: 30px 40px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  /* Hero: Allow full content visibility */
+  #sec-hero {
+    padding-top: 140px; /* Space for header */
+    justify-content: center;
+  }
+
+  #sec-hero::before {
+    height: 100%;
+    top: 0;
+    transform: none !important; /* Disable parallax offset on mobile */
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero-parrafo {
+    font-size: 1.2rem;
+    padding: 0 20px;
+  }
+
+  .hero-h1-segundo {
+    font-size: 1.5rem;
+  }
+
+  /* Intro Section — Tablet adjustments */
+  #sec-intro .container {
+    padding: 0 48px; /* More breathing room from screen edges */
+  }
+
+  .problem-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    justify-items: center; /* Centers items that don't fill a full column */
+  }
+
+  /* Center the 3rd card when it wraps to a row by itself */
+  .problem-card:nth-child(3) {
+    grid-column: 1 / -1; /* Span full width so margin auto centers it */
+    max-width: 50%; /* Keep it visually the same width as the other cards */
+  }
+
+  .problem-card {
+    padding: 30px 20px;
+  }
+
+  /* Tighter vertical distribution inside intro */
+  .problem-container {
+    margin-top: 40px;
+  }
+
+  .problem-grid {
+    margin-bottom: 30px; /* Reduce gap before conclusion */
+  }
+
+  .problem-conclusion {
+    margin-bottom: 0;
+    max-width: 400px;
+  }
+
+  /* Feature Sections - Restoring image visibility based on user request */
+  .feature-section.laptop,
+  .feature-section.tablet {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  #sec-app-workflow {
+    background-color: #f7f7f7;
+    margin-top: 40px;
+  }
+
+  #sec-app-workflow p {
+    font-size: 1.25rem;
+  }
+
+  #sec-app-workflow h3 {
+    min-width: 50vw;
+    margin-top: 1rem;
+  }
+
+  .feature-section.laptop::before {
+    position: relative; /* Take it out of absolute so it physically occupies space at the top */
+    opacity: 0;
+    transform: translateX(-100px) !important;
+    width: 300%;
+    min-height: 500px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: opacity 1s ease-out;
+    order: -1; /* Place image cleanly above the text */
+    margin-bottom: 20px;
+    scale: 1;
+  }
+
+  .feature-section.laptop.in-view::before {
+    opacity: 1; /* Image clearly visible */
+    transform: translate(400px) !important;
+  }
+
+  .feature-section.tablet::before {
+    position: relative; /* Take it out of absolute so it physically occupies space at the top */
+    width: 100%;
+    min-height: 550px;
+    opacity: 0;
+    transform: none !important; /* Cancel transform scales that bleed out of screen */
+    background-position: center;
+    background-size: cover;
+    transition: opacity 1s ease-out;
+    order: -1; /* Place image cleanly above the text */
+  }
+
+  .feature-section.tablet.in-view::before {
+    opacity: 1; /* Image clearly visible */
+    transform: none !important;
+  }
+
+  #sec-payment .container {
+    padding-top: 2rem;
+  }
+
+  #sec-payment h3 {
+    padding-bottom: 1.25rem;
+  }
+
   .feature-content.left,
   .feature-content.right {
     margin: 0 auto;
     text-align: center;
+    width: 90%;
+    left: auto;
+    right: auto;
+    background: transparent;
+    padding: 40px 15px;
+    box-shadow: none;
   }
-  .problem-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+
+  #sec-database {
+    padding-top: 0;
+  }
+
+  #sec-database p {
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+
+  #sec-database .sec-database-bottom {
+    position: relative;
+    z-index: 1;
+    padding-bottom: 40px;
+    order: 3;
+    transform: translateY(-50px);
+  }
+
+  .sec-database-bg {
+    position: relative; /* Take out of absolute flow */
+    order: 2; /* 1st */
+    width: 100%;
+    height: 725px;
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: translateY(20px) scale(1) !important;
+    opacity: 0;
+    transition:
+      opacity 1s,
+      transform 1s;
+  }
+
+  #sec-database.in-view .sec-database-bg {
+    transform: translateY(0) scale(1) !important;
+    opacity: 1 !important;
+  }
+
+  /* Database Section */
+  #sec-database .sec-database-top {
+    padding-top: 0 !important;
+    order: 1;
+    padding-bottom: 5.25rem;
+    max-width: 700px;
+  }
+
+  /* Pro Section */
+  #sec-pro {
+    justify-content: center !important; /* Override flex-start from global tablet rule */
+    align-items: center;
+  }
+
+  #sec-pro .section-title {
+    font-size: 2.5rem;
+    max-width: 600px;
+    margin-bottom: 4rem;
+  }
+
+  .pro-facts {
+    padding: 0 20px;
+    margin-bottom: 4rem;
+    gap: 2.5rem;
+  }
+
+  #sec-pro .pro-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 4rem !important;
+  }
+
+  /* Pricing Section */
+  .pricing-grid {
+    gap: 30px;
+  }
+  .pricing-card {
+    padding: 50px 30px;
   }
 }
 
+/* Mobile Devices (max-width: 768px) */
 @media (max-width: 768px) {
+  /* Global Adjustments */
+  .section-title {
+    font-size: 1.8rem;
+    padding: 0 15px;
+  }
+
+  #sub-referral {
+    padding-top: 0;
+  }
+
+  #sub-youtube {
+    padding-top: 0 !important;
+  }
+
+  #sec-ref-yt {
+    flex: 1;
+    padding-top: 0;
+  }
+
+  #sec-pricing {
+    padding-top: 0;
+  }
+
+  #sec-payment {
+    padding-bottom: 0;
+  }
+
+  #sec-pro {
+    padding-top: 0;
+  }
+
+  #sec-app-workflow {
+    padding-top: 60px;
+  }
+
+  #sec-intro .section-title {
+    font-size: 2.2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+    padding: 0 15px;
+  }
+
+  /* Header */
+  header {
+    padding: 20px 15px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .auth-links a {
+    margin: 0 8px;
+    font-size: 0.95rem;
+  }
+
+  /* Hero */
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-parrafo {
+    font-size: 1rem;
+  }
+
+  .hero-h1-segundo {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+  }
+
+  .hero-cta .btn-orange {
+    padding: 16px 30px;
+    font-size: 1rem;
+  }
+
+  #sec-intro {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .problem-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .problem-container {
+    padding: 0;
+  }
+
+  .problem-conclusion {
+    line-height: 1.6;
+  }
+
+  .problem-card {
+    padding: 20px 15px;
+  }
+
+  /* Feature Sections */
+  .feature-content h3 {
+    font-size: 2.2rem;
+  }
+
+  .feature-content p {
+    font-size: 1.1rem;
+  }
+
+  /* Feature Sections - Restoring image visibility based on user request */
+  .feature-section.laptop,
+  .feature-section.tablet {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  #sec-app-workflow {
+    background-color: #f7f7f7;
+    margin-top: 40px;
+  }
+
+  .feature-section.laptop::before {
+    position: relative; /* Take it out of absolute so it physically occupies space at the top */
+    opacity: 0;
+    transform: translateX(-100px) !important;
+    width: 150%;
+    min-height: 300px;
+    background-position: left;
+    background-size: cover;
+    transition: opacity 1s ease-out;
+    order: -1; /* Place image cleanly above the text */
+    margin-bottom: 20px;
+    scale: 0.9;
+  }
+
+  .feature-section.tablet::before {
+    position: relative; /* Take it out of absolute so it physically occupies space at the top */
+    width: 100%;
+    min-height: 350px;
+    opacity: 0;
+    transform: none !important; /* Cancel transform scales that bleed out of screen */
+    background-position: center;
+    background-size: cover;
+    transition: opacity 1s ease-out;
+    order: -1; /* Place image cleanly above the text */
+  }
+
+  .feature-section.laptop.in-view::before {
+    opacity: 1; /* Image clearly visible */
+    transform: translate(-10px) !important;
+  }
+
+  .feature-section.tablet.in-view::before {
+    opacity: 1; /* Image clearly visible */
+    transform: none !important;
+  }
+
+  /* Database Section Reordering and Layout */
+  #sec-database {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 40px;
+    padding-bottom: 0;
+  }
+
+  .sec-database-bg {
+    position: relative; /* Take out of absolute flow */
+    order: 1; /* 1st */
+    width: 100%;
+    height: 340px;
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: translateY(20px) scale(1) !important;
+    opacity: 0;
+    transition:
+      opacity 1s,
+      transform 1s;
+  }
+
+  #sec-database.in-view .sec-database-bg {
+    transform: translateY(0) scale(1) !important;
+    opacity: 1 !important;
+  }
+
+  .floating-spheres {
+    position: absolute;
+    margin-top: 290px;
+    order: 2; /* 2nd */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px 10px;
+    height: auto;
+    pointer-events: auto;
+    overflow: visible;
+  }
+
+  /* Re-enable and adjust circles for mobile */
+  .sphere {
+    position: relative;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    display: flex;
+    padding: 5px;
+  }
+
+  .sphere-1,
+  .sphere-2,
+  .sphere-3,
+  .sphere-4,
+  .sphere-5 {
+    width: 85px;
+    height: 85px;
+  }
+
+  .sphere i {
+    font-size: 1.5rem;
+    margin-bottom: 2px;
+  }
+  .sphere span {
+    font-size: 0.7rem;
+    max-width: 65px;
+  }
+
+  #sec-database .sec-database-top {
+    order: 3; /* 3rd and 4th: title and text */
+    padding-top: 20px;
+    margin-top: 100px;
+  }
+
+  #sec-database .sec-database-bottom {
+    order: 4; /* 5th: badge */
+    padding-top: 80px;
+  }
+
+  .mockup-callout {
+    flex-direction: row; /* Badge Checkbox to the left */
+    align-items: center;
+    text-align: left;
+    padding: 20px 25px;
+    gap: 15px;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 5;
+  }
+
+  .callout-icon {
+    margin-right: 0;
+    font-size: 2rem;
+  }
+
+  .mockup-caption {
+    font-size: 1.1rem;
+    text-align: left;
+  }
+
+  /* Pro Section */
+  .fact-item {
+    padding: 20px 15px;
+    font-size: 1.1rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .fact-item i {
+    margin-right: 0;
+  }
+
+  #sec-pro .btn-orange {
+    font-size: 1rem;
+    padding: 16px 30px;
+  }
+
+  /* Pricing */
   .pricing-grid {
     grid-template-columns: 1fr;
+    margin: 40px auto;
+    padding: 0 15px;
   }
-  .section {
-    padding: 40px 0;
+
+  .pricing-card {
+    padding: 40px 20px;
   }
-  .feature-section {
-    min-height: unset;
+
+  /* Footer */
+  footer {
+    padding: 60px 20px 40px;
   }
-  header {
-    padding: 20px;
+
+  .footer-links {
+    flex-direction: column;
+    gap: 15px;
   }
 }
